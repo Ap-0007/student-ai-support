@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScopeForge Pricing</title>
+    <link rel="stylesheet" href="/static/scopeforge.css">
+</head>
+<body>
+    <main class="page">
+        <nav class="nav">
+            <a class="brand" href="/">
+                <span class="brand-mark">SF</span>
+                <span>ScopeForge</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/app">App</a>
+                <a class="active" href="/pricing">Pricing</a>
+                <a class="cta-link" href="/app">Try The App</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <article class="hero-card">
+                <div class="eyebrow">Commercial Offer</div>
+                <h1>Price it like a real product.</h1>
+                <div class="hero-copy">
+                    <p>
+                        These plans are simple enough to publish immediately. Start with access plus lead capture,
+                        then add Stripe or Lemon Squeezy when you want payments handled automatically.
+                    </p>
+                    <p class="tiny">Checkout provider: <span data-checkout-provider>Stripe Payment Links</span></p>
+                </div>
+                <div class="pill-bar">
+                    <span class="pill">Monthly SaaS</span>
+                    <span class="pill">Service upsell</span>
+                    <span class="pill">Western-market positioning</span>
+                </div>
+            </article>
+
+            <aside class="hero-card dark-card">
+                <div class="eyebrow">Fastest Revenue</div>
+                <h2>Use both recurring and one-off offers.</h2>
+                <p>
+                    The subscription gets you scalable revenue. The done-for-you setup service gets you cash sooner.
+                    Selling both is more pragmatic than waiting for pure SaaS traction.
+                </p>
+                <ul class="list">
+                    <li>Solo users buy low-friction monthly access.</li>
+                    <li>Agencies buy team seats and templates.</li>
+                    <li>Busy buyers pay extra for setup and rollout.</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <div class="eyebrow">Plans</div>
+                    <h2>Launch with three simple tiers</h2>
+                </div>
+                <p>Keep the pricing tight. You can always raise it later once usage, export, and billing features mature.</p>
+            </div>
+            <div class="pricing-grid">
+                <article class="plan" data-plan-card="solo">
+                    <div class="eyebrow">Solo</div>
+                    <h3>For freelancers</h3>
+                    <span class="price">$19/mo</span>
+                    <ul class="list">
+                        <li>Proposal generator access</li>
+                        <li>USD, GBP, and EUR pricing frames</li>
+                        <li>Downloadable markdown output</li>
+                        <li>Core templates</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a class="button button-primary button-block" data-plan-link="solo" href="#lead-name-pricing">Request access</a>
+                        <div class="tiny plan-note" data-plan-note="solo">Set `STRIPE_SOLO_URL` to turn this into a live checkout button.</div>
+                    </div>
+                </article>
+                <article class="plan highlight" data-plan-card="studio">
+                    <div class="eyebrow">Studio</div>
+                    <h3>For small teams</h3>
+                    <span class="price">$49/mo</span>
+                    <ul class="list">
+                        <li>Everything in Solo</li>
+                        <li>Shared proposal packs</li>
+                        <li>Brand-customized templates</li>
+                        <li>Priority onboarding support</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a class="button button-primary button-block" data-plan-link="studio" href="#lead-name-pricing">Request access</a>
+                        <div class="tiny plan-note" data-plan-note="studio">Set `STRIPE_STUDIO_URL` to turn this into a live checkout button.</div>
+                    </div>
+                </article>
+                <article class="plan" data-plan-card="agency">
+                    <div class="eyebrow">Agency</div>
+                    <h3>For multi-seat workflows</h3>
+                    <span class="price">$129/mo</span>
+                    <ul class="list">
+                        <li>Everything in Studio</li>
+                        <li>Multiple team seats</li>
+                        <li>Agency-ready rollout pack</li>
+                        <li>Priority feature requests</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a class="button button-primary button-block" data-plan-link="agency" href="#lead-name-pricing">Request access</a>
+                        <div class="tiny plan-note" data-plan-note="agency">Set `STRIPE_AGENCY_URL` to turn this into a live checkout button.</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section compare-grid">
+            <article class="panel">
+                <div class="eyebrow">Feature Comparison</div>
+                <h2>What changes across plans</h2>
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Solo</th>
+                            <th>Studio</th>
+                            <th>Agency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Proposal generator</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Templates</td>
+                            <td>Core set</td>
+                            <td>Custom pack</td>
+                            <td>Custom pack</td>
+                        </tr>
+                        <tr>
+                            <td>Markdown export</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Team workflow</td>
+                            <td>No</td>
+                            <td>Small team</td>
+                            <td>Multi-seat</td>
+                        </tr>
+                        <tr>
+                            <td>Setup support</td>
+                            <td>Email</td>
+                            <td>Priority</td>
+                            <td>Priority</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <article class="panel dark-card">
+                <div class="eyebrow">Service Upsell</div>
+                <h2>Done-for-you setup from $800</h2>
+                <p>
+                    If you want revenue sooner than self-serve subscriptions can provide,
+                    sell a setup package that adapts the templates, tunes the pricing logic,
+                    and gives the buyer a branded rollout pack.
+                </p>
+                <ul class="list">
+                    <li>Strategy and positioning workshop</li>
+                    <li>Custom templates for the buyer's niche</li>
+                    <li>Brand voice and email output tuning</li>
+                    <li>Team handoff and rollout notes</li>
+                </ul>
+                <div class="plan-actions">
+                    <a class="button button-secondary button-block" data-plan-link="setup" href="#lead-name-pricing">Request setup</a>
+                    <div class="tiny plan-note" data-plan-note="setup">Set `STRIPE_SETUP_URL` for a direct paid setup checkout.</div>
+                </div>
+            </article>
+        </section>
+
+        <section class="section footer-grid">
+            <article class="footer-card">
+                <div class="eyebrow">Capture Buyers</div>
+                <h2>Offer early access now.</h2>
+                <p>
+                    Publish the pricing page now, collect interested buyers, and close the first few manually.
+                    You do not need to wait for a full billing stack to test demand.
+                </p>
+                <form class="form-grid lead-form">
+                    <div>
+                        <label class="label" for="lead-name-pricing">Name</label>
+                        <input id="lead-name-pricing" name="name" type="text" required>
+                    </div>
+                    <div>
+                        <label class="label" for="lead-email-pricing">Email</label>
+                        <input id="lead-email-pricing" name="email" type="email" required>
+                    </div>
+                    <div class="mini-grid">
+                        <div>
+                            <label class="label" for="lead-role-pricing">Role</label>
+                            <input id="lead-role-pricing" name="role" type="text" placeholder="Consultant" required>
+                        </div>
+                        <div>
+                            <label class="label" for="lead-market-pricing">Market</label>
+                            <input id="lead-market-pricing" name="market" type="text" value="EU" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label" for="lead-plan-pricing">Plan Interest</label>
+                        <select id="lead-plan-pricing" name="plan_interest">
+                            <option value="Solo">Solo</option>
+                            <option value="Studio">Studio</option>
+                            <option value="Agency">Agency</option>
+                            <option value="Done-for-you setup">Done-for-you setup</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label" for="lead-notes-pricing">Notes</label>
+                        <textarea id="lead-notes-pricing" name="notes" placeholder="Tell me what kind of proposal workflow you need."></textarea>
+                    </div>
+                    <button class="button button-primary button-block" type="submit" data-label="Request Early Access">Request Early Access</button>
+                    <div class="status"></div>
+                </form>
+            </article>
+
+            <article class="footer-card highlight">
+                <div class="eyebrow">Next Step</div>
+                <h2>Pair this page with the working app.</h2>
+                <p>
+                    The site is now more credible because the offer is not theoretical. Visitors can read
+                    the pricing, understand the buyer, and try the proposal generator immediately.
+                </p>
+                <div class="actions">
+                    <a class="button button-primary" href="/app">Open App</a>
+                    <a class="button button-ghost" href="/">Back Home</a>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="/static/scopeforge.js"></script>
+</body>
+</html>

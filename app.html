@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScopeForge App | Generate Proposals</title>
+    <link rel="stylesheet" href="/static/scopeforge.css">
+</head>
+<body>
+    <main class="page">
+        <nav class="nav">
+            <a class="brand" href="/">
+                <span class="brand-mark">SF</span>
+                <span>ScopeForge</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a class="active" href="/app">App</a>
+                <a href="/pricing">Pricing</a>
+                <a class="cta-link" href="#lead-capture">Need Setup Help?</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <article class="hero-card">
+                <div class="eyebrow">Proposal Generator</div>
+                <h1>Build a stronger offer in one pass.</h1>
+                <div class="hero-copy">
+                    <p>
+                        Choose a market, load a realistic template, and turn a messy client ask into
+                        a clearer proposal with pricing, scope boundaries, phases, ROI framing, and
+                        export-ready markdown.
+                    </p>
+                </div>
+                <div class="pill-bar">
+                    <span class="pill">No external AI dependency</span>
+                    <span class="pill">Downloadable output</span>
+                    <span class="pill">Western-market pricing</span>
+                </div>
+            </article>
+
+            <aside class="hero-card highlight">
+                <div class="eyebrow">How To Sell It</div>
+                <h2>Use this as product and service.</h2>
+                <p>
+                    Offer the SaaS at low monthly pricing, then upsell a done-for-you implementation
+                    or proposal setup service for buyers who do not want to configure it themselves.
+                </p>
+                <ul class="list">
+                    <li>Low-ticket SaaS gets inbound interest.</li>
+                    <li>High-ticket setup makes the first cash faster.</li>
+                    <li>Lead capture keeps working before Stripe is added.</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="app-layout">
+            <section class="panel">
+                <div class="section-header">
+                    <div>
+                        <div class="eyebrow">Templates</div>
+                        <h2>Load a realistic brief</h2>
+                    </div>
+                </div>
+                <div id="template-list" class="template-list"></div>
+
+                <div class="section-header section">
+                    <div>
+                        <div class="eyebrow">Builder</div>
+                        <h2>Generate proposal output</h2>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div>
+                        <label class="label" for="client-name">Client Name</label>
+                        <input id="client-name" type="text" value="Westbridge Labs">
+                    </div>
+
+                    <div class="mini-grid">
+                        <div>
+                            <label class="label" for="currency">Target Market</label>
+                            <select id="currency">
+                                <option value="USD">North America (USD)</option>
+                                <option value="GBP">United Kingdom (GBP)</option>
+                                <option value="EUR">European Union (EUR)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="label" for="service-type">Service Type</label>
+                            <select id="service-type">
+                                <option value="website">Website build</option>
+                                <option value="automation">Automation</option>
+                                <option value="branding">Branding</option>
+                                <option value="content">Content system</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mini-grid">
+                        <div>
+                            <label class="label" for="budget-band">Budget Band</label>
+                            <select id="budget-band">
+                                <option value="starter">Starter</option>
+                                <option value="growth">Growth</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="label" for="urgency">Delivery Speed</label>
+                            <select id="urgency">
+                                <option value="normal">Normal</option>
+                                <option value="rush">Rush</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="label" for="raw-request">Client Brief</label>
+                        <textarea id="raw-request"></textarea>
+                    </div>
+
+                    <button class="button button-primary button-block" id="generate-btn" type="button">Generate Proposal</button>
+                    <div class="tiny">
+                        The output is designed to be copied into email, Notion, Docs, or your proposal software.
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div id="empty-state" class="empty-state">
+                    <div class="art"></div>
+                    <div>
+                        <div class="eyebrow">Output</div>
+                        <h2>Proposal, pricing, and export.</h2>
+                        <p>
+                            Generate a result to populate commercial details, scope boundaries,
+                            delivery phases, and ready-to-send text.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="result-shell" class="result-shell hidden">
+                    <div class="result-top">
+                        <div class="result-pill">
+                            <span>Project</span>
+                            <strong id="project-label"></strong>
+                        </div>
+                        <div class="result-pill">
+                            <span>Recommended Price</span>
+                            <strong id="recommended-price"></strong>
+                        </div>
+                        <div class="result-pill">
+                            <span>Timeline</span>
+                            <strong id="timeline"></strong>
+                        </div>
+                    </div>
+
+                    <div class="result-card highlight">
+                        <div class="eyebrow">Summary</div>
+                        <p id="summary" class="body-copy"></p>
+                        <div class="pill-bar">
+                            <span class="pill" id="anchor-price"></span>
+                            <span class="pill" id="target-market"></span>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="eyebrow">Positioning</div>
+                        <p id="one-liner" class="body-copy"></p>
+                        <p id="roi-pitch" class="body-copy"></p>
+                        <p id="next-step-cta" class="body-copy"></p>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="eyebrow">Commercials</div>
+                        <p id="payment-schedule" class="body-copy"></p>
+                    </div>
+
+                    <div class="result-grid">
+                        <article class="result-card">
+                            <h3>Included Scope</h3>
+                            <ul id="scope-items" class="list"></ul>
+                        </article>
+                        <article class="result-card">
+                            <h3>Deliverables</h3>
+                            <ul id="deliverables" class="list"></ul>
+                        </article>
+                        <article class="result-card">
+                            <h3>Delivery Phases</h3>
+                            <ul id="delivery-phases" class="list"></ul>
+                        </article>
+                        <article class="result-card">
+                            <h3>Out Of Scope</h3>
+                            <ul id="out-of-scope" class="list"></ul>
+                        </article>
+                        <article class="result-card">
+                            <h3>Risk Flags</h3>
+                            <ul id="risk-flags" class="list"></ul>
+                        </article>
+                        <article class="result-card">
+                            <h3>Discovery Questions</h3>
+                            <ul id="discovery-questions" class="list"></ul>
+                        </article>
+                    </div>
+
+                    <article class="result-card">
+                        <h3>Upsells</h3>
+                        <ul id="upsells" class="list"></ul>
+                    </article>
+
+                    <article class="result-card">
+                        <h3>Proposal Email</h3>
+                        <div id="proposal-email" class="text-block"></div>
+                    </article>
+
+                    <article class="result-card">
+                        <h3>Change-Order Clause</h3>
+                        <div id="change-order-clause" class="text-block"></div>
+                    </article>
+
+                    <article class="result-card">
+                        <h3>Proposal Markdown</h3>
+                        <div id="proposal-markdown" class="text-block"></div>
+                        <div class="actions">
+                            <button class="button button-secondary" id="copy-email-btn" type="button">Copy Email</button>
+                            <button class="button button-ghost" id="copy-markdown-btn" type="button">Copy Markdown</button>
+                            <button class="button button-primary" id="download-markdown-btn" type="button">Download Markdown</button>
+                            <div class="tiny" id="copy-status"></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+
+        <section class="section" id="lead-capture">
+            <div class="footer-grid">
+                <article class="footer-card dark-card">
+                    <div class="eyebrow">Done-For-You Upsell</div>
+                    <h2>Sell setup services immediately.</h2>
+                    <p>
+                        If you do not want to rely only on subscriptions yet, market a setup package:
+                        brand the templates, wire export flows, and prepare proposal packs for a client
+                        team. That is the fastest path to early revenue.
+                    </p>
+                    <ul class="list">
+                        <li>Starter setup: template customization and positioning.</li>
+                        <li>Studio setup: team workflow and proposal pack rollout.</li>
+                        <li>Agency setup: branded package plus handoff training.</li>
+                    </ul>
+                </article>
+
+                <article class="footer-card">
+                    <div class="eyebrow">Lead Capture</div>
+                    <h2>Collect buyers or service leads.</h2>
+                    <form class="form-grid lead-form">
+                        <div>
+                            <label class="label" for="lead-name-app">Name</label>
+                            <input id="lead-name-app" name="name" type="text" required>
+                        </div>
+                        <div>
+                            <label class="label" for="lead-email-app">Email</label>
+                            <input id="lead-email-app" name="email" type="email" required>
+                        </div>
+                        <div class="mini-grid">
+                            <div>
+                                <label class="label" for="lead-role-app">Role</label>
+                                <input id="lead-role-app" name="role" type="text" placeholder="Agency owner" required>
+                            </div>
+                            <div>
+                                <label class="label" for="lead-market-app">Market</label>
+                                <input id="lead-market-app" name="market" type="text" value="United Kingdom" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="label" for="lead-plan-app">Plan Interest</label>
+                            <select id="lead-plan-app" name="plan_interest">
+                                <option value="Solo">Solo</option>
+                                <option value="Studio">Studio</option>
+                                <option value="Agency">Agency</option>
+                                <option value="Done-for-you setup">Done-for-you setup</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="label" for="lead-notes-app">Notes</label>
+                            <textarea id="lead-notes-app" name="notes" placeholder="Tell me what kind of client work you price."></textarea>
+                        </div>
+                        <button class="button button-primary button-block" type="submit" data-label="Get Access">Get Access</button>
+                        <div class="status"></div>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
+    <script src="/static/scopeforge.js"></script>
+</body>
+</html>

@@ -1,3 +1,8 @@
 .env
 __pycache__/
 .venv/
+scopeforge.db
+*.pyc
+.env
+.env.local
+.DS_Store

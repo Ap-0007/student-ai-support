@@ -3,87 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Mental Health Assistant</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        .chat-container { width: 400px; height: 600px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; }
-        .header { background: #2563eb; color: white; padding: 20px; text-align: center; font-weight: bold; font-size: 1.2em; }
-        .chat-box { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
-        .message { max-width: 80%; padding: 12px 16px; border-radius: 15px; line-height: 1.4; font-size: 0.95em; }
-        .user-msg { background: #2563eb; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
-        .bot-msg { background: #e5e7eb; color: #1f2937; align-self: flex-start; border-bottom-left-radius: 4px; }
-        .bot-strategy { font-size: 0.85em; background: #dbeafe; color: #1e40af; padding: 8px 12px; border-radius: 8px; margin-top: 5px; border-left: 4px solid #3b82f6; }
-        .emergency { background: #fee2e2; color: #991b1b; border-left: 4px solid #dc2626; font-weight: bold; }
-        .input-area { padding: 15px; background: white; border-top: 1px solid #e5e7eb; display: flex; gap: 10px; }
-        input { flex: 1; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; outline: none; }
-        button { padding: 12px 20px; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
-        button:hover { background: #1d4ed8; }
-    </style>
+    <title>ScopeForge | Proposal Generator For Western Client Work</title>
+    <link rel="stylesheet" href="/static/scopeforge.css">
 </head>
 <body>
+    <main class="page">
+        <nav class="nav">
+            <a class="brand" href="/">
+                <span class="brand-mark">SF</span>
+                <span>ScopeForge</span>
+            </a>
+            <div class="nav-links">
+                <a class="active" href="/">Home</a>
+                <a href="/app">App</a>
+                <a href="/pricing">Pricing</a>
+                <a class="cta-link" href="/app">Open Generator</a>
+            </div>
+        </nav>
 
-<div class="chat-container">
-    <div class="header">Support Space</div>
-    <div class="chat-box" id="chat-box">
-        <div class="message bot-msg">Hi there. I'm here to listen and help. What's on your mind today?</div>
-    </div>
-    <div class="input-area">
-        <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-</div>
+        <section class="hero">
+            <article class="hero-card">
+                <div class="eyebrow">Useful, monetisable, outside India</div>
+                <h1>Turn vague client asks into priced offers.</h1>
+                <div class="hero-copy">
+                    <p>
+                        ScopeForge helps freelancers and small agencies sell to North America,
+                        the UK, and the EU with clearer scope, better price anchors, stronger
+                        change-order language, and faster proposal output.
+                    </p>
+                </div>
+                <div class="metric-row">
+                    <div class="metric">
+                        <strong>USD / GBP / EUR</strong>
+                        <span>Pricing is framed for Western client markets instead of India-only rates.</span>
+                    </div>
+                    <div class="metric">
+                        <strong>One messy brief</strong>
+                        <span>Paste the client request once and turn it into a sellable project plan.</span>
+                    </div>
+                    <div class="metric">
+                        <strong>Immediate upsell</strong>
+                        <span>Scope boundaries and next-step offers protect margin from day one.</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <a class="button button-primary" href="/app">Generate A Proposal</a>
+                    <a class="button button-ghost" href="/pricing">See Pricing Strategy</a>
+                </div>
+            </article>
 
-<script>
-    async function sendMessage() {
-        const inputField = document.getElementById("user-input");
-        const message = inputField.value.trim();
-        if (!message) return;
+            <aside class="hero-card dark-card">
+                <div class="eyebrow">Why this can sell fast</div>
+                <h2>Freelancers already have the pain.</h2>
+                <p>
+                    They lose money on under-scoped projects, hidden integrations,
+                    uncontrolled revisions, and messy client communication. This product
+                    fixes a revenue leak, which is much easier to monetize than a novelty tool.
+                </p>
+                <ul class="list">
+                    <li>Charge monthly for repeat proposal usage.</li>
+                    <li>Upsell a done-for-you setup service.</li>
+                    <li>Use the lead form to capture prospects before Stripe is added.</li>
+                    <li>Ship immediately as a simple FastAPI app.</li>
+                </ul>
+            </aside>
+        </section>
 
-        // 1. Display User Message
-        appendMessage(message, "user-msg");
-        inputField.value = "";
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <div class="eyebrow">Core Value</div>
+                    <h2>More than a demo page</h2>
+                </div>
+                <p>
+                    The public site explains what the product does, who pays for it, and how to buy.
+                    The app page generates practical output you can actually send to a client.
+                </p>
+            </div>
+            <div class="cards-3">
+                <article class="card">
+                    <h3>Scope Guardrails</h3>
+                    <p>Included scope, excluded work, risk flags, and phased delivery make it harder for clients to expand the project for free.</p>
+                </article>
+                <article class="card">
+                    <h3>Sales Output</h3>
+                    <p>Each generation includes a proposal email, ROI angle, next-step CTA, and downloadable markdown you can reuse immediately.</p>
+                </article>
+                <article class="card">
+                    <h3>Lead Capture</h3>
+                    <p>Waitlist submissions are saved in SQLite so you can upload this now and start collecting interested buyers or service leads.</p>
+                </article>
+            </div>
+        </section>
 
-        // 2. Send to FastAPI Backend
-        try {
-            const response = await fetch("/chat", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ user_message: message })
-            });
-            const data = await response.json();
+        <section class="section split">
+            <article class="card highlight">
+                <div class="eyebrow">Monetisation Paths</div>
+                <h2>Three ways to make money</h2>
+                <ul class="list">
+                    <li>SaaS subscriptions for freelancers, consultants, and boutique agencies.</li>
+                    <li>High-ticket done-for-you proposal setup or workflow automation.</li>
+                    <li>Templates, exports, and saved-brand packs as higher plans.</li>
+                </ul>
+            </article>
+            <article class="card">
+                <div class="eyebrow">Launch Plan</div>
+                <h2>Uploadable today</h2>
+                <ul class="list">
+                    <li>Landing page explains the product and pricing.</li>
+                    <li>App page works without external AI APIs.</li>
+                    <li>Pricing page gives a direct commercial offer.</li>
+                    <li>Lead form stores interest even before payment is wired up.</li>
+                </ul>
+            </article>
+        </section>
 
-            // 3. Display Bot Reply
-            let botClasses = "message bot-msg";
-            if (data.is_escalated) botClasses += " emergency"; // Make it red if it's an emergency
-            
-            appendMessage(data.reply, botClasses);
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <div class="eyebrow">Typical Buyers</div>
+                    <h2>Who would actually pay</h2>
+                </div>
+                <p>ScopeForge is positioned for people selling services, not for consumers looking for entertainment.</p>
+            </div>
+            <div class="cards-3">
+                <article class="card">
+                    <h3>Solo Freelancer</h3>
+                    <p>Needs help pricing projects, setting payment schedules, and drawing scope boundaries without sounding weak.</p>
+                </article>
+                <article class="card">
+                    <h3>Small Agency</h3>
+                    <p>Needs repeatable proposal quality when junior team members respond to inbound leads.</p>
+                </article>
+                <article class="card">
+                    <h3>Consultant</h3>
+                    <p>Needs faster turnaround on client-facing proposals and cleaner upsell logic after the initial project wins.</p>
+                </article>
+            </div>
+        </section>
 
-            // 4. Display Coping Strategy (if it exists)
-            if (data.coping_strategy && !data.is_escalated) {
-                const strategyHtml = `<div class="bot-strategy"><b>Suggested Strategy:</b> ${data.coping_strategy}</div>`;
-                const chatBox = document.getElementById("chat-box");
-                chatBox.insertAdjacentHTML('beforeend', strategyHtml);
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }
+        <section class="section footer-grid">
+            <article class="footer-card">
+                <div class="eyebrow">Get Leads</div>
+                <h2>Collect interested buyers now.</h2>
+                <p>
+                    Use this form as your first monetisation funnel. It stores submissions locally in
+                    `scopeforge.db`, so you can start capturing demand the moment the app is deployed.
+                </p>
+                <form class="form-grid lead-form">
+                    <div>
+                        <label class="label" for="lead-name-home">Name</label>
+                        <input id="lead-name-home" name="name" type="text" required>
+                    </div>
+                    <div>
+                        <label class="label" for="lead-email-home">Email</label>
+                        <input id="lead-email-home" name="email" type="email" required>
+                    </div>
+                    <div class="mini-grid">
+                        <div>
+                            <label class="label" for="lead-role-home">Role</label>
+                            <input id="lead-role-home" name="role" type="text" placeholder="Freelancer" required>
+                        </div>
+                        <div>
+                            <label class="label" for="lead-market-home">Market</label>
+                            <input id="lead-market-home" name="market" type="text" value="North America" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label" for="lead-plan-home">Plan Interest</label>
+                        <select id="lead-plan-home" name="plan_interest">
+                            <option value="Solo">Solo</option>
+                            <option value="Studio">Studio</option>
+                            <option value="Agency">Agency</option>
+                            <option value="Done-for-you setup">Done-for-you setup</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label" for="lead-notes-home">Notes</label>
+                        <textarea id="lead-notes-home" name="notes" placeholder="What kind of clients do you sell to?"></textarea>
+                    </div>
+                    <button class="button button-primary button-block" type="submit" data-label="Join Waitlist">Join Waitlist</button>
+                    <div class="status"></div>
+                </form>
+            </article>
 
-        } catch (error) {
-            appendMessage("Sorry, the server is offline.", "message bot-msg emergency");
-        }
-    }
-
-    function appendMessage(text, className) {
-        const chatBox = document.getElementById("chat-box");
-        const msgDiv = document.createElement("div");
-        msgDiv.className = `message ${className}`;
-        msgDiv.textContent = text;
-        chatBox.appendChild(msgDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
-
-    function handleKeyPress(event) {
-        if (event.key === "Enter") sendMessage();
-    }
-</script>
-
+            <article class="footer-card dark-card">
+                <div class="eyebrow">Immediate CTA</div>
+                <h2>Use the generator right now.</h2>
+                <p>
+                    The app page includes templates, richer commercial output, copy-ready email text,
+                    and markdown export so this feels much closer to a real paid product.
+                </p>
+                <ul class="list">
+                    <li>Open the proposal generator.</li>
+                    <li>Load a template or paste a client brief.</li>
+                    <li>Generate deliverables, scope, pricing, and proposal text.</li>
+                    <li>Copy or download the result.</li>
+                </ul>
+                <div class="actions">
+                    <a class="button button-primary" href="/app">Open Generator</a>
+                    <a class="button button-ghost" href="/pricing">View Plans</a>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="/static/scopeforge.js"></script>
 </body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScopeForge Admin</title>
+    <link rel="stylesheet" href="/static/scopeforge.css">
+</head>
+<body>
+    <main class="page">
+        <nav class="nav">
+            <a class="brand" href="/">
+                <span class="brand-mark">SF</span>
+                <span>ScopeForge</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/app">App</a>
+                <a href="/pricing">Pricing</a>
+                <a class="active" href="/admin">Admin</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <article class="hero-card">
+                <div class="eyebrow">Admin</div>
+                <h1>View captured leads.</h1>
+                <div class="hero-copy">
+                    <p>
+                        This page reads waitlist and buyer-interest submissions from SQLite.
+                        It is protected by an `ADMIN_TOKEN` that the frontend sends as a bearer token.
+                    </p>
+                </div>
+                <div class="pill-bar">
+                    <span class="pill">Token-protected</span>
+                    <span class="pill">Lead table</span>
+                    <span class="pill">CSV export</span>
+                </div>
+            </article>
+
+            <aside class="hero-card dark-card">
+                <div class="eyebrow">Use It Pragmatically</div>
+                <h2>Enough protection for an uploadable MVP.</h2>
+                <p>
+                    This is not a full auth system. It is a lightweight admin gate so you can
+                    deploy quickly, review buyer interest, and export leads without exposing the list publicly.
+                </p>
+            </aside>
+        </section>
+
+        <section class="app-layout">
+            <section class="panel">
+                <div class="eyebrow">Access</div>
+                <h2>Load your lead inbox</h2>
+                <div class="form-grid">
+                    <div>
+                        <label class="label" for="admin-token">Admin Token</label>
+                        <input id="admin-token" type="password" placeholder="Enter ADMIN_TOKEN">
+                    </div>
+                    <div class="actions">
+                        <button class="button button-primary" id="load-leads-btn" type="button">Load Leads</button>
+                        <button class="button button-ghost" id="download-leads-btn" type="button">Download CSV</button>
+                    </div>
+                    <div id="admin-status" class="status"></div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="result-top">
+                    <div class="result-pill">
+                        <span>Total Leads</span>
+                        <strong id="lead-count">0</strong>
+                    </div>
+                    <div class="result-pill">
+                        <span>Latest Email</span>
+                        <strong id="latest-email">No leads yet</strong>
+                    </div>
+                    <div class="result-pill">
+                        <span>Top Plan</span>
+                        <strong id="top-plan">N/A</strong>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="section">
+            <article class="panel">
+                <div class="section-header">
+                    <div>
+                        <div class="eyebrow">Lead Table</div>
+                        <h2>Captured demand</h2>
+                    </div>
+                    <p>The newest leads appear first. Use CSV export if you want to move these into email or CRM tooling.</p>
+                </div>
+                <div class="table-wrap">
+                    <table class="compare-table" id="lead-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Market</th>
+                                <th>Plan</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lead-table-body">
+                            <tr>
+                                <td colspan="7" class="tiny">Load leads to view entries.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="/static/scopeforge.js"></script>
+</body>
+</html>
