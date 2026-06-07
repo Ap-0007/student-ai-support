@@ -1,109 +1,36 @@
-# ScopeForge
+# Student Ai Support
 
-ScopeForge is a small FastAPI product you can upload immediately.
+Student Ai Support — a project by vanta.nox.
 
-It now includes:
+![Language](https://img.shields.io/badge/language-HTML-blue) ![License](https://img.shields.io/badge/license-MIT-green) 
 
-- a public landing page at `/`
-- a working generator app at `/app`
-- a pricing page at `/pricing`
-- an admin page at `/admin`
-- lead capture stored in local SQLite
-- configurable Stripe-style checkout links
-- proposal output designed for freelancers, consultants, and small agencies selling to North America, the UK, and the EU
+## 📖 About
 
-## What it does
+This repository contains the source code for **Student Ai Support**.
 
-Paste a rough client brief and ScopeForge generates:
+## 🛠️ Tech Stack
 
-- a scope summary
-- a one-line sales angle
-- a Western-market price range in USD, GBP, or EUR
-- an anchor price
-- a payment schedule
-- delivery phases
-- deliverables
-- out-of-scope boundaries
-- risk flags
-- discovery questions
-- upsells
-- proposal email copy
-- a change-order clause
-- downloadable markdown proposal text
+- **Primary Language:** HTML
 
-## Why this is monetisable
-
-This is not a generic AI toy. It addresses a real commercial problem:
-
-- freelancers underprice messy client requests
-- small agencies need repeatable proposal output
-- consultants need faster turnaround on scoped offers
-
-Suggested offers:
-
-- Solo: USD 19/month
-- Studio: USD 49/month
-- Agency: USD 129/month
-- Done-for-you setup: from USD 800 one-off
-
-## Stack
-
-- FastAPI
-- plain HTML, CSS, and JS
-- SQLite for lead capture
-- no external AI or vector database dependency
-
-## Run locally
+## 🚀 Getting Started
 
 ```bash
-cd /Users/amogh/Documents/side_project
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn main:app --reload
+# Clone the repository
+git clone https://github.com/Ap-0007/student-ai-support.git
+cd student-ai-support
 ```
 
-Then open:
+Open `index.html` in your browser to get started.
 
-- [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-- [http://127.0.0.1:8000/app](http://127.0.0.1:8000/app)
-- [http://127.0.0.1:8000/pricing](http://127.0.0.1:8000/pricing)
-- [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+## 🤝 Contributing
 
-## Environment variables
+Contributions, issues, and feature requests are welcome!  
+Feel free to open an [issue](https://github.com/Ap-0007/student-ai-support/issues) or submit a pull request.
 
-Copy `.env.example` into your own env setup and replace the placeholder values.
+## 📄 License
 
-- `CHECKOUT_PROVIDER`
-- `STRIPE_SOLO_URL`
-- `STRIPE_STUDIO_URL`
-- `STRIPE_AGENCY_URL`
-- `STRIPE_SETUP_URL`
-- `ADMIN_TOKEN`
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-If the Stripe URLs are set, the pricing page buttons become live checkout links.
-If they are missing, the page falls back to lead capture.
+---
 
-The admin page uses `ADMIN_TOKEN` as a simple bearer token gate for viewing and exporting leads.
-
-## Deploy quickly
-
-Included for faster upload:
-
-- `Procfile` for Procfile-style hosts
-- `render.yaml` for Render
-- `.env.example` for deploy-time config
-
-## Data
-
-Lead capture is stored in:
-
-- `/Users/amogh/Documents/side_project/scopeforge.db`
-
-## Sensible next upgrades
-
-1. Replace the token gate with real admin auth.
-2. Add PDF export and branded templates.
-3. Add usage limits by plan.
-4. Add email automation for captured leads.
-5. Add saved workspaces and customer accounts.
+**Built by [vanta.nox](https://github.com/Ap-0007)**
